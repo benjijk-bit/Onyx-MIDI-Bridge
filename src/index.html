@@ -84,11 +84,18 @@
           <h2>Create Mapping</h2>
           <div class="field">
             <label for="target-filter">Filter Onyx targets</label>
-            <input type="text" id="target-filter" placeholder="e.g. Playback 3, Grand Master…" />
+            <input type="text" id="target-filter" placeholder="e.g. Front Wash, Playback 3, GO…" />
           </div>
           <div class="field">
             <label for="target-select">Onyx target</label>
             <select id="target-select" size="8"></select>
+            <div class="hint" id="onyx-bank">
+              Playback names appear once Onyx sends them after you connect.
+            </div>
+            <div class="hint">
+              Playback 1–20 are the fader slots on this OSC device's current Onyx bank, like a
+              playback wing. Switching banks changes what each slot controls.
+            </div>
           </div>
 
           <div class="field">

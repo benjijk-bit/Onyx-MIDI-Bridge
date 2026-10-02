@@ -42,6 +42,7 @@ pub struct IncomingOsc {
     pub address: String,
     pub float_value: Option<f32>,
     pub int_value: Option<i32>,
+    pub string_value: Option<String>,
 }
 
 /// Starts a background thread listening for OSC packets from Onyx on `listen_port`,
@@ -79,10 +80,12 @@ where
         OscPacket::Message(msg) => {
             let mut float_value = None;
             let mut int_value = None;
-            if let Some(first) = msg.args.first() {
+            let mut string_value = None;
+            if let Some(first) = msg.args.into_iter().next() {
                 match first {
-                    OscType::Float(f) => float_value = Some(*f),
-                    OscType::Int(i) => int_value = Some(*i),
+                    OscType::Float(f) => float_value = Some(f),
+                    OscType::Int(i) => int_value = Some(i),
+                    OscType::String(s) => string_value = Some(s),
                     _ => {}
                 }
             }
@@ -90,6 +93,7 @@ where
                 address: msg.addr,
                 float_value,
                 int_value,
+                string_value,
             });
         }
         OscPacket::Bundle(bundle) => {

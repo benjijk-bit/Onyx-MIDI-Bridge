@@ -8,6 +8,12 @@ let allTargets = [];
 let targetsByAddress = new Map();
 let learnedMidi = null;
 let learnUnlisten = null;
+// Display text Onyx pushes over OSC (playback names, bank number), keyed by address.
+const onyxTexts = new Map();
+// "Playback N" category -> the address Onyx sends that slot's playback name to.
+let playbackNameAddress = new Map();
+let targetsRenderQueued = false;
+const BANK_LABEL_ADDRESS = "/Mx/label/4401/text";
 
 const el = (id) => document.getElementById(id);
 
@@ -137,9 +143,34 @@ async function refreshTargets() {
     const data = await invoke("get_onyx_targets");
     allTargets = (data.targets || []).filter((t) => t.kind !== "label");
     targetsByAddress = new Map(allTargets.map((t) => [t.address, t]));
+    // Onyx sends a playback slot's name to the button one above its fader (fader 4203 -> 4204).
+    playbackNameAddress = new Map();
+    for (const t of allTargets) {
+      const m = t.category.startsWith("Playback ") && t.address.match(/^\/Mx\/fader\/(\d+)$/);
+      if (m) playbackNameAddress.set(t.category, `/Mx/button/${Number(m[1]) + 1}/text`);
+    }
     renderTargetOptions("");
   } catch (e) {
     showError("Failed to load Onyx target list: " + e);
+  }
+}
+
+function playbackName(category) {
+  return onyxTexts.get(playbackNameAddress.get(category)) || "";
+}
+
+function onOnyxText({ address, text }) {
+  onyxTexts.set(address, text);
+  if (address === BANK_LABEL_ADDRESS) {
+    el("onyx-bank").textContent = `Onyx bank: ${text}`;
+  }
+  // Onyx sends names in bursts (all 20 slots on a bank change); redraw once per frame.
+  if (!targetsRenderQueued) {
+    targetsRenderQueued = true;
+    requestAnimationFrame(() => {
+      targetsRenderQueued = false;
+      renderTargetOptions(el("target-filter").value);
+    });
   }
 }
 
@@ -153,7 +184,8 @@ function renderTargetOptions(filterText) {
     if (
       needle &&
       !t.name.toLowerCase().includes(needle) &&
-      !t.category.toLowerCase().includes(needle)
+      !t.category.toLowerCase().includes(needle) &&
+      !playbackName(t.category).toLowerCase().includes(needle)
     ) {
       continue;
     }
@@ -162,7 +194,8 @@ function renderTargetOptions(filterText) {
   }
   for (const [category, items] of byCategory) {
     const group = document.createElement("optgroup");
-    group.label = category;
+    const name = playbackName(category);
+    group.label = name ? `${category} — ${name}` : category;
     for (const t of items) {
       const opt = document.createElement("option");
       opt.value = t.address;
@@ -269,7 +302,11 @@ async function addMapping() {
   if (!target || !learnedMidi) return;
   const entry = {
     id: crypto.randomUUID(),
-    label: el("label-input").value.trim() || target.name,
+    label:
+      el("label-input").value.trim() ||
+      (playbackName(target.category)
+        ? `${target.name} (${playbackName(target.category)})`
+        : target.name),
     midi: {
       kind: learnedMidi.kind,
       channel: learnedMidi.channel,
@@ -400,8 +437,9 @@ async function init() {
     await listen("midi-activity", (event) => {
       el("midi-activity").textContent = "Last MIDI in: " + describeRawMidi(event.payload);
     });
+    await listen("onyx-text", (event) => onOnyxText(event.payload));
   } catch (e) {
-    showError("Failed to start the MIDI activity monitor: " + e);
+    showError("Failed to start event listeners: " + e);
   }
   await refreshDevices();
   await refreshTargets();
