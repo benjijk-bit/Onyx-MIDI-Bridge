@@ -20,6 +20,8 @@ pub struct AppStateInner {
     mappings: Mutex<Vec<MappingEntry>>,
     learn_mode: AtomicBool,
     onyx_conn_info: Mutex<Option<(String, u16, u16)>>, // ip, send_port, listen_port
+    // The feedback listener thread can't be stopped, so a second Connect must reuse it.
+    osc_listen_port: Mutex<Option<u16>>,
     app_handle: tauri::AppHandle,
 }
 
@@ -240,14 +242,27 @@ fn connect_onyx(
     state: tauri::State<SharedState>,
 ) -> Result<(), String> {
     let out = OscOut::new(&ip, send_port).map_err(|e| e.to_string())?;
+
+    let mut listening = state.osc_listen_port.lock().unwrap();
+    match *listening {
+        Some(port) if port == listen_port => {}
+        Some(port) => {
+            return Err(format!(
+                "Already listening for feedback on port {port}. Restart the app to change the feedback port."
+            ))
+        }
+        None => {
+            let shared = state.inner().clone();
+            osc::start_listener(listen_port, move |incoming| {
+                handle_incoming_osc(&shared, incoming);
+            })
+            .map_err(|e| e.to_string())?;
+            *listening = Some(listen_port);
+        }
+    }
+
     *state.osc_out.lock().unwrap() = Some(out);
     *state.onyx_conn_info.lock().unwrap() = Some((ip, send_port, listen_port));
-
-    let shared = state.inner().clone();
-    osc::start_listener(listen_port, move |incoming| {
-        handle_incoming_osc(&shared, incoming);
-    })
-    .map_err(|e| e.to_string())?;
     Ok(())
 }
 
@@ -323,6 +338,7 @@ pub fn run() {
                 mappings: Mutex::new(Vec::new()),
                 learn_mode: AtomicBool::new(false),
                 onyx_conn_info: Mutex::new(None),
+                osc_listen_port: Mutex::new(None),
                 app_handle: app.handle().clone(),
             });
             app.manage(state);
