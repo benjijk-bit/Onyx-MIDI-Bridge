@@ -85,6 +85,17 @@ fn midi_kind_matches(mapped: MidiKind, incoming: MidiKind) -> bool {
 // ---------- OSC -> MIDI (feedback) ----------
 
 fn handle_incoming_osc(state: &SharedState, incoming: IncomingOsc) {
+    let value = match (&incoming.string_value, incoming.int_value, incoming.float_value) {
+        (Some(s), _, _) => format!("\"{s}\""),
+        (_, Some(i), _) => i.to_string(),
+        (_, _, Some(f)) => f.to_string(),
+        _ => String::new(),
+    };
+    let _ = state.app_handle.emit(
+        "osc-activity",
+        serde_json::json!({ "address": incoming.address, "value": value }),
+    );
+
     // Onyx pushes display text (playback names, bank number) to "<control>/text".
     if incoming.address.ends_with("/text") {
         if let Some(text) = &incoming.string_value {

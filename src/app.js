@@ -438,6 +438,12 @@ async function init() {
       el("midi-activity").textContent = "Last MIDI in: " + describeRawMidi(event.payload);
     });
     await listen("onyx-text", (event) => onOnyxText(event.payload));
+    let oscReceived = 0;
+    await listen("osc-activity", ({ payload }) => {
+      oscReceived += 1;
+      el("osc-activity").textContent =
+        `Last OSC in (${oscReceived} total): ${payload.address} ${payload.value}`;
+    });
   } catch (e) {
     showError("Failed to start event listeners: " + e);
   }
