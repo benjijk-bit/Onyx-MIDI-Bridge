@@ -185,6 +185,34 @@ function updateAddButtonState() {
 
 // ---------- MIDI Learn ----------
 
+const KIND_LABELS = { control_change: "CC", note_on: "Note", note_off: "Note" };
+const STATUS_NAMES = {
+  0x80: "Note Off",
+  0x90: "Note On",
+  0xa0: "Poly Aftertouch",
+  0xb0: "CC",
+  0xc0: "Program Change",
+  0xd0: "Channel Pressure",
+  0xe0: "Pitch Bend",
+};
+
+// Channels are stored 0-15 but shown 1-16, matching how controllers label them.
+function describeLearned(m) {
+  return `${KIND_LABELS[m.kind] || m.kind} ${m.number} · ch ${m.channel + 1}`;
+}
+
+function describeRawMidi(bytes) {
+  const hex = bytes.map((b) => b.toString(16).padStart(2, "0").toUpperCase()).join(" ");
+  const type = bytes[0] & 0xf0;
+  if (type === 0xf0) return `${hex} — system message (can't be mapped)`;
+  const mappable = type === 0x80 || type === 0x90 || type === 0xb0;
+  const number = bytes.length >= 2 ? ` ${bytes[1]}` : "";
+  return (
+    `${hex} — ${STATUS_NAMES[type] || "Unknown"}${number} · ch ${(bytes[0] & 0x0f) + 1}` +
+    (mappable ? "" : " (can't be mapped)")
+  );
+}
+
 async function startLearn() {
   if (!midiInConnected) {
     showError("Connect a MIDI input first.");
@@ -199,15 +227,13 @@ async function startLearn() {
   el("learn-status").textContent = "Move a control now…";
   el("learn-readout").textContent = "";
 
-  // Register the listener before arming learn mode so we can't miss the event.
-  learnUnlisten = await listen("midi-learn-result", (event) => {
-    learnedMidi = event.payload;
-    el("learn-readout").textContent =
-      `${learnedMidi.kind} ch${learnedMidi.channel} #${learnedMidi.number}`;
-    finishLearn();
-  });
-
   try {
+    // Register the listener before arming learn mode so we can't miss the event.
+    learnUnlisten = await listen("midi-learn-result", (event) => {
+      learnedMidi = event.payload;
+      el("learn-readout").textContent = describeLearned(learnedMidi);
+      finishLearn();
+    });
     await invoke("start_midi_learn");
   } catch (e) {
     showError("Failed to start MIDI Learn: " + e);
@@ -287,7 +313,7 @@ async function refreshMappings() {
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${escapeHtml(m.label)}</td>
-        <td class="mono">${escapeHtml(m.midi.kind)} ch${m.midi.channel} #${m.midi.number}</td>
+        <td class="mono">${escapeHtml(describeLearned(m.midi))}</td>
         <td class="mono">${escapeHtml(m.osc_address)}</td>
         <td>${escapeHtml(directionLabel(m.direction))}</td>
         <td><button class="danger" data-id="${escapeHtml(m.id)}">Remove</button></td>
@@ -370,6 +396,13 @@ function wireUp() {
 async function init() {
   wireUp();
   updateDirectionOptions();
+  try {
+    await listen("midi-activity", (event) => {
+      el("midi-activity").textContent = "Last MIDI in: " + describeRawMidi(event.payload);
+    });
+  } catch (e) {
+    showError("Failed to start the MIDI activity monitor: " + e);
+  }
   await refreshDevices();
   await refreshTargets();
   await refreshMappings();

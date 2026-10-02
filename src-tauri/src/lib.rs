@@ -3,7 +3,7 @@ mod midi;
 mod osc;
 
 use mapping::{Direction, MappingEntry, MappingProfile, MidiKind, ValueKind};
-use midir::{MidiInput, MidiOutput, MidiOutputConnection};
+use midir::{Ignore, MidiInput, MidiOutput, MidiOutputConnection};
 use osc::{IncomingOsc, OscOut};
 use serde_json::Value;
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -152,7 +152,10 @@ fn list_midi_outputs() -> Result<Vec<String>, String> {
 /// lifetime — v1 does not support disconnect/reconnect cycling.
 #[tauri::command]
 fn connect_midi_input(port_name: String, state: tauri::State<SharedState>) -> Result<(), String> {
-    let midi_in = MidiInput::new("onyx-midi-bridge-in").map_err(|e| e.to_string())?;
+    let mut midi_in = MidiInput::new("onyx-midi-bridge-in").map_err(|e| e.to_string())?;
+    // Clock and active-sensing can arrive dozens of times a second and are never mappable;
+    // left in, they'd flood the activity monitor and hide the pad hits the user is looking for.
+    midi_in.ignore(Ignore::TimeAndActiveSense);
     let ports = midi_in.ports();
     let port = ports
         .iter()
@@ -171,6 +174,7 @@ fn connect_midi_input(port_name: String, state: tauri::State<SharedState>) -> Re
             &port,
             "onyx-midi-bridge-in-conn",
             move |_stamp, message, _| {
+                let _ = shared.app_handle.emit("midi-activity", message.to_vec());
                 if let Some(parsed) = midi::parse_channel_voice(message) {
                     handle_incoming_midi(&shared, parsed);
                 }
