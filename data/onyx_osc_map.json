@@ -1,0 +1,1346 @@
+{
+  "targets": [
+    {
+      "category": "Playback 1",
+      "name": "Playback 1 Fader (Level)",
+      "address": "/Mx/fader/4203",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4203"
+    },
+    {
+      "category": "Playback 1",
+      "name": "Playback 1 PFA",
+      "address": "/Mx/button/4201",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4201/led"
+    },
+    {
+      "category": "Playback 1",
+      "name": "Playback 1 PFB",
+      "address": "/Mx/button/4202",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4202/led"
+    },
+    {
+      "category": "Playback 1",
+      "name": "Playback 1 PFC",
+      "address": "/Mx/button/4204",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4204/led"
+    },
+    {
+      "category": "Playback 1",
+      "name": "Playback 1 PFD",
+      "address": "/Mx/button/4205",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4205/led"
+    },
+    {
+      "category": "Playback 2",
+      "name": "Playback 2 Fader (Level)",
+      "address": "/Mx/fader/4213",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4213"
+    },
+    {
+      "category": "Playback 2",
+      "name": "Playback 2 PFA",
+      "address": "/Mx/button/4211",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4211/led"
+    },
+    {
+      "category": "Playback 2",
+      "name": "Playback 2 PFB",
+      "address": "/Mx/button/4212",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4212/led"
+    },
+    {
+      "category": "Playback 2",
+      "name": "Playback 2 PFC",
+      "address": "/Mx/button/4214",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4214/led"
+    },
+    {
+      "category": "Playback 2",
+      "name": "Playback 2 PFD",
+      "address": "/Mx/button/4215",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4215/led"
+    },
+    {
+      "category": "Playback 3",
+      "name": "Playback 3 Fader (Level)",
+      "address": "/Mx/fader/4223",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4223"
+    },
+    {
+      "category": "Playback 3",
+      "name": "Playback 3 PFA",
+      "address": "/Mx/button/4221",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4221/led"
+    },
+    {
+      "category": "Playback 3",
+      "name": "Playback 3 PFB",
+      "address": "/Mx/button/4222",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4222/led"
+    },
+    {
+      "category": "Playback 3",
+      "name": "Playback 3 PFC",
+      "address": "/Mx/button/4224",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4224/led"
+    },
+    {
+      "category": "Playback 3",
+      "name": "Playback 3 PFD",
+      "address": "/Mx/button/4225",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4225/led"
+    },
+    {
+      "category": "Playback 4",
+      "name": "Playback 4 Fader (Level)",
+      "address": "/Mx/fader/4233",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4233"
+    },
+    {
+      "category": "Playback 4",
+      "name": "Playback 4 PFA",
+      "address": "/Mx/button/4231",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4231/led"
+    },
+    {
+      "category": "Playback 4",
+      "name": "Playback 4 PFB",
+      "address": "/Mx/button/4232",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4232/led"
+    },
+    {
+      "category": "Playback 4",
+      "name": "Playback 4 PFC",
+      "address": "/Mx/button/4234",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4234/led"
+    },
+    {
+      "category": "Playback 4",
+      "name": "Playback 4 PFD",
+      "address": "/Mx/button/4235",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4235/led"
+    },
+    {
+      "category": "Playback 5",
+      "name": "Playback 5 Fader (Level)",
+      "address": "/Mx/fader/4243",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4243"
+    },
+    {
+      "category": "Playback 5",
+      "name": "Playback 5 PFA",
+      "address": "/Mx/button/4241",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4241/led"
+    },
+    {
+      "category": "Playback 5",
+      "name": "Playback 5 PFB",
+      "address": "/Mx/button/4242",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4242/led"
+    },
+    {
+      "category": "Playback 5",
+      "name": "Playback 5 PFC",
+      "address": "/Mx/button/4244",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4244/led"
+    },
+    {
+      "category": "Playback 5",
+      "name": "Playback 5 PFD",
+      "address": "/Mx/button/4245",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4245/led"
+    },
+    {
+      "category": "Playback 6",
+      "name": "Playback 6 Fader (Level)",
+      "address": "/Mx/fader/4253",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4253"
+    },
+    {
+      "category": "Playback 6",
+      "name": "Playback 6 PFA",
+      "address": "/Mx/button/4251",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4251/led"
+    },
+    {
+      "category": "Playback 6",
+      "name": "Playback 6 PFB",
+      "address": "/Mx/button/4252",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4252/led"
+    },
+    {
+      "category": "Playback 6",
+      "name": "Playback 6 PFC",
+      "address": "/Mx/button/4254",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4254/led"
+    },
+    {
+      "category": "Playback 6",
+      "name": "Playback 6 PFD",
+      "address": "/Mx/button/4255",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4255/led"
+    },
+    {
+      "category": "Playback 7",
+      "name": "Playback 7 Fader (Level)",
+      "address": "/Mx/fader/4263",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4263"
+    },
+    {
+      "category": "Playback 7",
+      "name": "Playback 7 PFA",
+      "address": "/Mx/button/4261",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4261/led"
+    },
+    {
+      "category": "Playback 7",
+      "name": "Playback 7 PFB",
+      "address": "/Mx/button/4262",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4262/led"
+    },
+    {
+      "category": "Playback 7",
+      "name": "Playback 7 PFC",
+      "address": "/Mx/button/4264",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4264/led"
+    },
+    {
+      "category": "Playback 7",
+      "name": "Playback 7 PFD",
+      "address": "/Mx/button/4265",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4265/led"
+    },
+    {
+      "category": "Playback 8",
+      "name": "Playback 8 Fader (Level)",
+      "address": "/Mx/fader/4273",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4273"
+    },
+    {
+      "category": "Playback 8",
+      "name": "Playback 8 PFA",
+      "address": "/Mx/button/4271",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4271/led"
+    },
+    {
+      "category": "Playback 8",
+      "name": "Playback 8 PFB",
+      "address": "/Mx/button/4272",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4272/led"
+    },
+    {
+      "category": "Playback 8",
+      "name": "Playback 8 PFC",
+      "address": "/Mx/button/4274",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4274/led"
+    },
+    {
+      "category": "Playback 8",
+      "name": "Playback 8 PFD",
+      "address": "/Mx/button/4275",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4275/led"
+    },
+    {
+      "category": "Playback 9",
+      "name": "Playback 9 Fader (Level)",
+      "address": "/Mx/fader/4283",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4283"
+    },
+    {
+      "category": "Playback 9",
+      "name": "Playback 9 PFA",
+      "address": "/Mx/button/4281",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4281/led"
+    },
+    {
+      "category": "Playback 9",
+      "name": "Playback 9 PFB",
+      "address": "/Mx/button/4282",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4282/led"
+    },
+    {
+      "category": "Playback 9",
+      "name": "Playback 9 PFC",
+      "address": "/Mx/button/4284",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4284/led"
+    },
+    {
+      "category": "Playback 9",
+      "name": "Playback 9 PFD",
+      "address": "/Mx/button/4285",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4285/led"
+    },
+    {
+      "category": "Playback 10",
+      "name": "Playback 10 Fader (Level)",
+      "address": "/Mx/fader/4293",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4293"
+    },
+    {
+      "category": "Playback 10",
+      "name": "Playback 10 PFA",
+      "address": "/Mx/button/4291",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4291/led"
+    },
+    {
+      "category": "Playback 10",
+      "name": "Playback 10 PFB",
+      "address": "/Mx/button/4292",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4292/led"
+    },
+    {
+      "category": "Playback 10",
+      "name": "Playback 10 PFC",
+      "address": "/Mx/button/4294",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4294/led"
+    },
+    {
+      "category": "Playback 10",
+      "name": "Playback 10 PFD",
+      "address": "/Mx/button/4295",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4295/led"
+    },
+    {
+      "category": "Playback 11",
+      "name": "Playback 11 Fader (Level)",
+      "address": "/Mx/fader/4603",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4603"
+    },
+    {
+      "category": "Playback 11",
+      "name": "Playback 11 PFA",
+      "address": "/Mx/button/4601",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4601/led"
+    },
+    {
+      "category": "Playback 11",
+      "name": "Playback 11 PFB",
+      "address": "/Mx/button/4602",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4602/led"
+    },
+    {
+      "category": "Playback 11",
+      "name": "Playback 11 PFC",
+      "address": "/Mx/button/4604",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4604/led"
+    },
+    {
+      "category": "Playback 11",
+      "name": "Playback 11 PFD",
+      "address": "/Mx/button/4605",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4605/led"
+    },
+    {
+      "category": "Playback 12",
+      "name": "Playback 12 Fader (Level)",
+      "address": "/Mx/fader/4613",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4613"
+    },
+    {
+      "category": "Playback 12",
+      "name": "Playback 12 PFA",
+      "address": "/Mx/button/4611",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4611/led"
+    },
+    {
+      "category": "Playback 12",
+      "name": "Playback 12 PFB",
+      "address": "/Mx/button/4612",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4612/led"
+    },
+    {
+      "category": "Playback 12",
+      "name": "Playback 12 PFC",
+      "address": "/Mx/button/4614",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4614/led"
+    },
+    {
+      "category": "Playback 12",
+      "name": "Playback 12 PFD",
+      "address": "/Mx/button/4615",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4615/led"
+    },
+    {
+      "category": "Playback 13",
+      "name": "Playback 13 Fader (Level)",
+      "address": "/Mx/fader/4623",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4623"
+    },
+    {
+      "category": "Playback 13",
+      "name": "Playback 13 PFA",
+      "address": "/Mx/button/4621",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4621/led"
+    },
+    {
+      "category": "Playback 13",
+      "name": "Playback 13 PFB",
+      "address": "/Mx/button/4622",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4622/led"
+    },
+    {
+      "category": "Playback 13",
+      "name": "Playback 13 PFC",
+      "address": "/Mx/button/4624",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4624/led"
+    },
+    {
+      "category": "Playback 13",
+      "name": "Playback 13 PFD",
+      "address": "/Mx/button/4625",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4625/led"
+    },
+    {
+      "category": "Playback 14",
+      "name": "Playback 14 Fader (Level)",
+      "address": "/Mx/fader/4633",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4633"
+    },
+    {
+      "category": "Playback 14",
+      "name": "Playback 14 PFA",
+      "address": "/Mx/button/4631",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4631/led"
+    },
+    {
+      "category": "Playback 14",
+      "name": "Playback 14 PFB",
+      "address": "/Mx/button/4632",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4632/led"
+    },
+    {
+      "category": "Playback 14",
+      "name": "Playback 14 PFC",
+      "address": "/Mx/button/4634",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4634/led"
+    },
+    {
+      "category": "Playback 14",
+      "name": "Playback 14 PFD",
+      "address": "/Mx/button/4635",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4635/led"
+    },
+    {
+      "category": "Playback 15",
+      "name": "Playback 15 Fader (Level)",
+      "address": "/Mx/fader/4643",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4643"
+    },
+    {
+      "category": "Playback 15",
+      "name": "Playback 15 PFA",
+      "address": "/Mx/button/4641",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4641/led"
+    },
+    {
+      "category": "Playback 15",
+      "name": "Playback 15 PFB",
+      "address": "/Mx/button/4642",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4642/led"
+    },
+    {
+      "category": "Playback 15",
+      "name": "Playback 15 PFC",
+      "address": "/Mx/button/4644",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4644/led"
+    },
+    {
+      "category": "Playback 15",
+      "name": "Playback 15 PFD",
+      "address": "/Mx/button/4645",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4645/led"
+    },
+    {
+      "category": "Playback 16",
+      "name": "Playback 16 Fader (Level)",
+      "address": "/Mx/fader/4653",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4653"
+    },
+    {
+      "category": "Playback 16",
+      "name": "Playback 16 PFA",
+      "address": "/Mx/button/4651",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4651/led"
+    },
+    {
+      "category": "Playback 16",
+      "name": "Playback 16 PFB",
+      "address": "/Mx/button/4652",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4652/led"
+    },
+    {
+      "category": "Playback 16",
+      "name": "Playback 16 PFC",
+      "address": "/Mx/button/4654",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4654/led"
+    },
+    {
+      "category": "Playback 16",
+      "name": "Playback 16 PFD",
+      "address": "/Mx/button/4655",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4655/led"
+    },
+    {
+      "category": "Playback 17",
+      "name": "Playback 17 Fader (Level)",
+      "address": "/Mx/fader/4663",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4663"
+    },
+    {
+      "category": "Playback 17",
+      "name": "Playback 17 PFA",
+      "address": "/Mx/button/4661",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4661/led"
+    },
+    {
+      "category": "Playback 17",
+      "name": "Playback 17 PFB",
+      "address": "/Mx/button/4662",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4662/led"
+    },
+    {
+      "category": "Playback 17",
+      "name": "Playback 17 PFC",
+      "address": "/Mx/button/4664",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4664/led"
+    },
+    {
+      "category": "Playback 17",
+      "name": "Playback 17 PFD",
+      "address": "/Mx/button/4665",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4665/led"
+    },
+    {
+      "category": "Playback 18",
+      "name": "Playback 18 Fader (Level)",
+      "address": "/Mx/fader/4673",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4673"
+    },
+    {
+      "category": "Playback 18",
+      "name": "Playback 18 PFA",
+      "address": "/Mx/button/4671",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4671/led"
+    },
+    {
+      "category": "Playback 18",
+      "name": "Playback 18 PFB",
+      "address": "/Mx/button/4672",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4672/led"
+    },
+    {
+      "category": "Playback 18",
+      "name": "Playback 18 PFC",
+      "address": "/Mx/button/4674",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4674/led"
+    },
+    {
+      "category": "Playback 18",
+      "name": "Playback 18 PFD",
+      "address": "/Mx/button/4675",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4675/led"
+    },
+    {
+      "category": "Playback 19",
+      "name": "Playback 19 Fader (Level)",
+      "address": "/Mx/fader/4683",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4683"
+    },
+    {
+      "category": "Playback 19",
+      "name": "Playback 19 PFA",
+      "address": "/Mx/button/4681",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4681/led"
+    },
+    {
+      "category": "Playback 19",
+      "name": "Playback 19 PFB",
+      "address": "/Mx/button/4682",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4682/led"
+    },
+    {
+      "category": "Playback 19",
+      "name": "Playback 19 PFC",
+      "address": "/Mx/button/4684",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4684/led"
+    },
+    {
+      "category": "Playback 19",
+      "name": "Playback 19 PFD",
+      "address": "/Mx/button/4685",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4685/led"
+    },
+    {
+      "category": "Playback 20",
+      "name": "Playback 20 Fader (Level)",
+      "address": "/Mx/fader/4693",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": "/Mx/fader/4693"
+    },
+    {
+      "category": "Playback 20",
+      "name": "Playback 20 PFA",
+      "address": "/Mx/button/4691",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4691/led"
+    },
+    {
+      "category": "Playback 20",
+      "name": "Playback 20 PFB",
+      "address": "/Mx/button/4692",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4692/led"
+    },
+    {
+      "category": "Playback 20",
+      "name": "Playback 20 PFC",
+      "address": "/Mx/button/4694",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4694/led"
+    },
+    {
+      "category": "Playback 20",
+      "name": "Playback 20 PFD",
+      "address": "/Mx/button/4695",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4695/led"
+    },
+    {
+      "category": "Masters",
+      "name": "Grand Master Level",
+      "address": "/Mx/fader/2202",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": null
+    },
+    {
+      "category": "Masters",
+      "name": "Grand Master Flash",
+      "address": "/Mx/button/2201",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/2201/led"
+    },
+    {
+      "category": "Masters",
+      "name": "Flash Master Level",
+      "address": "/Mx/fader/2212",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": null
+    },
+    {
+      "category": "Masters",
+      "name": "Flash Master Flash",
+      "address": "/Mx/button/2211",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/2211/led"
+    },
+    {
+      "category": "Masters",
+      "name": "Group Master A Level",
+      "address": "/Mx/fader/2222",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": null
+    },
+    {
+      "category": "Masters",
+      "name": "Group Master A Flash",
+      "address": "/Mx/button/2221",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/2221/led"
+    },
+    {
+      "category": "Masters",
+      "name": "Group Master B Level",
+      "address": "/Mx/fader/2232",
+      "kind": "fader",
+      "range": [
+        0,
+        255
+      ],
+      "feedback_address": null
+    },
+    {
+      "category": "Masters",
+      "name": "Group Master B Flash",
+      "address": "/Mx/button/2231",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/2231/led"
+    },
+    {
+      "category": "Transport",
+      "name": "SELECT",
+      "address": "/Mx/button/5502",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/5502/led"
+    },
+    {
+      "category": "Transport",
+      "name": "RELEASE",
+      "address": "/Mx/button/5503",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/5503/led"
+    },
+    {
+      "category": "Transport",
+      "name": "BEAT",
+      "address": "/Mx/button/5504",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/5504/led"
+    },
+    {
+      "category": "Transport",
+      "name": "SNAP",
+      "address": "/Mx/button/5511",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/5511/led"
+    },
+    {
+      "category": "Transport",
+      "name": "Pause/Back",
+      "address": "/Mx/button/5512",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/5512/led"
+    },
+    {
+      "category": "Transport",
+      "name": "GO",
+      "address": "/Mx/button/5513",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/5513/led"
+    },
+    {
+      "category": "Bank Paging",
+      "name": "Bank Page Up",
+      "address": "/Mx/button/4412",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4412/led"
+    },
+    {
+      "category": "Bank Paging",
+      "name": "Bank Page Down",
+      "address": "/Mx/button/4413",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": "/Mx/button/4413/led"
+    },
+    {
+      "category": "Bank Paging",
+      "name": "Playback Bank 1 Select",
+      "address": "/Mx/button/4421",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": null
+    },
+    {
+      "category": "Bank Paging",
+      "name": "Playback Bank 2 Select",
+      "address": "/Mx/button/4422",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": null
+    },
+    {
+      "category": "Bank Paging",
+      "name": "Playback Bank 3 Select",
+      "address": "/Mx/button/4423",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": null
+    },
+    {
+      "category": "Bank Paging",
+      "name": "Playback Bank 4 Select",
+      "address": "/Mx/button/4424",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": null
+    },
+    {
+      "category": "Bank Paging",
+      "name": "Playback Bank 5 Select",
+      "address": "/Mx/button/4425",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": null
+    },
+    {
+      "category": "Bank Paging",
+      "name": "Fader Swap (1-10 / 11-20)",
+      "address": "/Mx/button/4600",
+      "kind": "button",
+      "range": [
+        0,
+        1
+      ],
+      "feedback_address": null
+    }
+  ]
+}
