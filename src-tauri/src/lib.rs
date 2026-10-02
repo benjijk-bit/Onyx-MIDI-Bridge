@@ -100,19 +100,28 @@ fn handle_incoming_osc(state: &SharedState, incoming: IncomingOsc) {
         let Some(conn) = out_conn.as_mut() else {
             continue;
         };
+        // Onyx's docs and third-party integrations disagree on int vs float, so accept
+        // either; a message with neither (e.g. a string) is skipped rather than sent as 0,
+        // which would slam a motorized fader to the bottom.
         let bytes = match entry.value_kind {
             ValueKind::Fader => {
-                let raw = incoming
+                let Some(value) = incoming
                     .float_value
-                    .map(mapping::onyx_fader_to_midi)
-                    .unwrap_or(0);
+                    .or(incoming.int_value.map(|i| i as f32))
+                else {
+                    continue;
+                };
+                let raw = mapping::onyx_fader_to_midi(value);
                 midi::cc_message(entry.midi.channel, entry.midi.number, raw)
             }
             ValueKind::Button => {
-                let raw = incoming
+                let Some(value) = incoming
                     .int_value
-                    .map(mapping::onyx_button_to_midi)
-                    .unwrap_or(0);
+                    .or(incoming.float_value.map(|f| f.round() as i32))
+                else {
+                    continue;
+                };
+                let raw = mapping::onyx_button_to_midi(value);
                 match entry.midi.kind {
                     MidiKind::ControlChange => {
                         midi::cc_message(entry.midi.channel, entry.midi.number, raw)

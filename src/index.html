@@ -44,18 +44,23 @@
         <section class="panel">
           <h2>Obsidian Onyx</h2>
           <div class="field">
-            <label for="onyx-ip">Console IP</label>
+            <label for="onyx-ip">Onyx IP</label>
             <input type="text" id="onyx-ip" value="127.0.0.1" />
+            <div class="hint">IP of the Onyx PC's selected OSC network interface.</div>
           </div>
           <div class="row">
             <div class="field" style="flex: 1">
-              <label for="onyx-send-port">Send port</label>
-              <input type="number" id="onyx-send-port" value="9000" />
+              <label for="onyx-send-port">Onyx OSC port</label>
+              <input type="number" id="onyx-send-port" value="8000" />
             </div>
             <div class="field" style="flex: 1">
-              <label for="onyx-listen-port">Listen port</label>
-              <input type="number" id="onyx-listen-port" value="9001" />
+              <label for="onyx-listen-port">Feedback port</label>
+              <input type="number" id="onyx-listen-port" value="9000" />
             </div>
+          </div>
+          <div class="hint">
+            Onyx OSC port = Onyx Settings › OSC › Port ("Port number for outgoing data").<br />
+            Feedback port = the OSC Device's Port ("Incoming port used by the OSC device").
           </div>
           <button id="connect-onyx">Connect</button>
           <div class="status" id="onyx-status"><span class="dot"></span>Not connected</div>
