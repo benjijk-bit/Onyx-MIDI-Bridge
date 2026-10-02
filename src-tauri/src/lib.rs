@@ -266,6 +266,17 @@ fn connect_onyx(
     Ok(())
 }
 
+/// Taps an Onyx button (press then release), e.g. a playback bank select.
+#[tauri::command]
+fn press_onyx_button(address: String, state: tauri::State<SharedState>) -> Result<(), String> {
+    let guard = state.osc_out.lock().unwrap();
+    let out = guard.as_ref().ok_or("Connect to Onyx first.")?;
+    out.send_int(&address, 1).map_err(|e| e.to_string())?;
+    // A short hold so Onyx registers a press rather than coalescing it with the release.
+    std::thread::sleep(std::time::Duration::from_millis(40));
+    out.send_int(&address, 0).map_err(|e| e.to_string())
+}
+
 #[tauri::command]
 fn start_midi_learn(state: tauri::State<SharedState>) {
     state.learn_mode.store(true, Ordering::SeqCst);
@@ -356,6 +367,7 @@ pub fn run() {
             remove_mapping,
             get_mappings,
             get_onyx_targets,
+            press_onyx_button,
             save_profile,
             load_profile,
         ])

@@ -421,6 +421,19 @@ function wireUp() {
   el("connect-midi-in").addEventListener("click", connectMidiIn);
   el("connect-midi-out").addEventListener("click", connectMidiOut);
   el("connect-onyx").addEventListener("click", connectOnyx);
+  for (let bank = 1; bank <= 5; bank++) {
+    const btn = document.createElement("button");
+    btn.className = "secondary";
+    btn.textContent = String(bank);
+    btn.addEventListener("click", async () => {
+      try {
+        await invoke("press_onyx_button", { address: `/Mx/button/${4420 + bank}` });
+      } catch (e) {
+        showError("Couldn't select bank: " + e);
+      }
+    });
+    el("bank-buttons").appendChild(btn);
+  }
   el("target-filter").addEventListener("input", (e) => renderTargetOptions(e.target.value));
   el("target-select").addEventListener("change", updateAddButtonState);
   el("learn-btn").addEventListener("click", startLearn);
